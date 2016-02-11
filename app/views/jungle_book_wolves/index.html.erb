@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Jungle Book Wolves</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jungle_book_wolves.each do |jungle_book_wolf| %>
+        <tr>
+          <td><%= jungle_book_wolf.description %></td>
+          <td><%= link_to 'Show', jungle_book_wolf %></td>
+          <td><%= link_to 'Edit', edit_jungle_book_wolf_path(jungle_book_wolf) %></td>
+          <td><%= link_to 'Destroy', jungle_book_wolf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br>
+
+<%= link_to 'New Jungle book wolf', new_jungle_book_wolf_path %>

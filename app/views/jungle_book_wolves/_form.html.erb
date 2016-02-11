@@ -1,0 +1,21 @@
+<%= form_for(@jungle_book_wolf) do |f| %>
+  <% if @jungle_book_wolf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jungle_book_wolf.errors.count, "error") %> prohibited this jungle_book_wolf from being saved:</h2>
+
+      <ul>
+      <% @jungle_book_wolf.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
